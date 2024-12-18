@@ -1,10 +1,10 @@
-import requests
+import requests  #导入requests库，使用页面对接请求等。
 
 import argparse
 import os
 
-from collections import defaultdict
-from collections import Counter
+from collections import defaultdict 
+from collections import Counter # 从这些库里面取某个模块直接使用
 
 import git  # 导入git模块，用于操作Git库
 
@@ -129,9 +129,9 @@ while True:
             commenter = comment['user']['login']
             comment_counts[commenter] = comment_counts.get(commenter, 0) + 1
 
-    page += 1
+    page += 1 ##页数+1，程序执行成功，下一页。
 
-sorted_issue_counts = dict(sorted(issue_counts.items(), key=lambda item: item[1], reverse=True))
+sorted_issue_counts = dict(sorted(issue_counts.items(), key=lambda item: item[1], reverse=True)) ##变量地址的更迭
 sorted_comment_counts = dict(sorted(comment_counts.items(), key=lambda item: item[1], reverse=True))
 
 # 输出结果
